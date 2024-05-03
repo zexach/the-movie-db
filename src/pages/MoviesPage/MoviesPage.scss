@@ -1,6 +1,8 @@
 @import '../../style/variables';
 
 .movies-page{
-    width: 100%;
+    max-width: 100%;
     min-height: 100vh;
+    padding: 2rem;
+    background-color: $dark-blue;
 }

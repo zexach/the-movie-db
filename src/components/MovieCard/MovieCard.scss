@@ -1,0 +1,48 @@
+@import '../../style/variables';
+
+.movie-card{
+    width: 530px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0px 0px 11px 2px rgba(8, 22, 33, 0.75);
+    border-radius: 3px;
+    background: rgb(0,212,255);
+    background: radial-gradient(circle, rgba(0,212,255,1) 43%, rgba(103,103,249,1) 100%);
+    cursor: pointer;
+    &__img{
+        width: 200px;
+        border-radius: 3px 0 0 3px;        
+    }
+    &__details{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        &__title{
+            font-family: $title-font;
+            font-size: 55px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 0.9;
+        }
+        &__sub{
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            font-size: 20px;
+            color: $dark-blue;
+            &__info{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 18px;
+                &__span{
+                    font-size: 26px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

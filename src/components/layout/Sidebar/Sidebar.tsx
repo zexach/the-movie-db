@@ -2,6 +2,7 @@ import React from "react";
 import appLogo from '../../../assets/icons/tmdb-logo-long.svg'
 import movieIcon from '../../../assets/icons/movie.svg'
 import tvShowIcon from '../../../assets/icons/tv-show.svg'
+import rubiconLogo from '../../../assets/icons/rubicon.svg'
 import './Sidebar.scss'
 import { Link } from "react-router-dom";
 
@@ -10,7 +11,13 @@ const Navbar: React.FC = () => {
     return(
         <>
         <div className="navbar">
-            <img src={appLogo} alt="TMDB" className="navbar__logo" />
+            <Link to='/'>
+                <div className="navbar__logos">
+                    <img src={appLogo} alt="TMDB" className="navbar__logos__logo" />
+                    <p className="navbar__logos__collaboration">x</p>
+                    <img src={rubiconLogo} alt="RUBICON" className="navbar__logos__logo" />
+                </div>
+            </Link>
             <div className="navbar__pages">
                 <Link to='/'>
                     <div className="navbar__pages__page">
