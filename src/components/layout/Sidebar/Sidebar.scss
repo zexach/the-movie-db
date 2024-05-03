@@ -1,0 +1,36 @@
+@import '../../../style/variables';
+
+.navbar{
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    background-color: $light-gray;
+    &__logo{
+        width: 260px;
+    }
+    &__pages{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        &__page{
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            border-radius: 3px;
+            font-size: 18px;
+            color: $text-gray;
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover{
+                scale: 1.02;
+                background-color: $light-gray-v1;
+            }
+        }
+    }
+}
