@@ -3,6 +3,7 @@ import './MoviesPage.scss'
 import { getMovies } from "../../services/moviesService";
 import { Movie } from "../../models/movie";
 import MovieList from "../../components/MovieList/MovieList";
+import Searchbar from "../../components/Searchbar/Searchbar";
 
 const MoviesPage: React.FC = () => {
 
@@ -15,6 +16,7 @@ const MoviesPage: React.FC = () => {
     return(
         <>
         <div className="movies-page">
+            <Searchbar placeholder="Search for a movie..." />
             <MovieList movieList={movies}/>
         </div>
         </>
