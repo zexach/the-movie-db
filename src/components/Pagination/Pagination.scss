@@ -1,5 +1,17 @@
 @import '../../style/variables';
 
 .pagination{
-    
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    &__page{
+        width: 50px;
+        height: 50px;
+        border-radius: 2px;
+        background-color: $light-gray;
+        box-shadow: $black-box-shadow;
+        cursor: pointer;
+    }
 }

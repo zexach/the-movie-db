@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
 import './MoviesPage.scss'
 import { getMovies, searchMovies } from "../../services/moviesService";
-import { Movie } from "../../models/movie";
 import MovieList from "../../components/MovieList/MovieList";
 import Searchbar from "../../components/Searchbar/Searchbar";
 import SearchResultList from "../../components/SearchResultList/SearchResultList";
 import useDebouncer from "../../hooks/useDebouncer";
+import { IMovie } from "../../models/movie";
+import { ISearchResult } from "../../models/searchResult";
+import { usePaginationContext } from "../../context/PaginationContext";
 
 const MoviesPage: React.FC = () => {
 
-    const [movies, setMovies] = useState<Movie[]>([]);
-    const [searchResult, setSearchResult] = useState<Movie[]>([]);
+    const { selectedPage } = usePaginationContext();
+
+    const [movies, setMovies] = useState<IMovie[]>([]);
+    const [searchResult, setSearchResult] = useState<ISearchResult | undefined>(undefined);
     const [searchQuery, setSearchQuery] = useState<string>('');
-    const [isSearchActive, setIsSearchActive] = useState<boolean>(false);
 
     const searchHandler = (query: string):void => {
         setSearchQuery(query);
@@ -26,15 +29,15 @@ const MoviesPage: React.FC = () => {
     
     useEffect(() => {
         if (debouncedSearch.length > 2) {
-            searchMovies('/search/movie', debouncedSearch, 1, setSearchResult);
+            searchMovies('/search/movie', debouncedSearch, selectedPage, setSearchResult);
         }
-    }, [debouncedSearch])
+    }, [debouncedSearch, selectedPage])
 
     return(
         <>
         <div className="movies-page">
             <Searchbar placeholder="Search for a movie..." onSearch={searchHandler} />
-            { !(debouncedSearch.length > 2) ? <MovieList movieList={movies}/> : <SearchResultList searchResult={searchResult} /> }
+            { !(debouncedSearch.length > 2) ? <MovieList movieList={movies}/> : <SearchResultList searchResult={searchResult} />}
         </div>
         </>
     );

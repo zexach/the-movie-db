@@ -1,23 +1,22 @@
 import React from "react";
 import './SearchItem.scss'
-import { Movie } from "../../models/movie";
+import { IMovie } from "../../models/movie";
 import { Link } from "react-router-dom";
 import { dateToLocaleString } from "../../utils/dateUtil";
+import noImageIcon from '../../assets/images/no-image.jpg';
 
 type Props = {
     children?: React.ReactNode;
-    movie: Movie;
+    movie: IMovie;
 }
 
 const SearchItem: React.FC<Props> = ({ movie }) => {
-
-
 
     return(
         <>
         <Link to={`/movie/${movie.id}`}>
             <div className="search-item">
-                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="Poster" className="search-item__poster" />
+                <img src={movie.poster_path === null ? noImageIcon : `https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="Poster" className="search-item__poster" />
                 <div className="search-item__details">
                     <h3 className="search-item__details__title">{movie.title}</h3>
                     <p className="search-item__details__release-date">{dateToLocaleString(movie.release_date)}</p>

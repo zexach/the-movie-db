@@ -4,13 +4,16 @@ import './style/index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { PaginationContextProvider } from './context/PaginationContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <BrowserRouter>
-      <App />
+      <PaginationContextProvider>
+        <App />
+      </PaginationContextProvider>
   </BrowserRouter>
 );
 

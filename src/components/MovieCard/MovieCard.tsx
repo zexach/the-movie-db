@@ -1,12 +1,12 @@
 import React from "react";
 import './MovieCard.scss'
-import { Movie } from "../../models/movie";
+import { IMovie } from "../../models/movie";
 import { Link } from "react-router-dom";
 import { dateToLocaleString } from "../../utils/dateUtil";
 
 type Props = {
     children?: React.ReactNode,
-    movie: Movie
+    movie: IMovie
 }
 
 const MovieCard: React.FC<Props> = ({ movie }) => {

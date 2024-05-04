@@ -2,7 +2,7 @@
 
 .search-item{
     width: 100%;
-    height: 130px;
+    height: 140px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -14,7 +14,7 @@
     cursor: pointer;
     &__poster{
         width: 80px;
-        height: 130px;
+        height: 140px;
         object-fit: cover;
         border-radius: 3px 0 0 3px;
         font-size: 12px;
@@ -25,7 +25,8 @@
         display: flex;
         flex-direction: column;
         &__title{
-            font-size: 28px;
+            font-size: 24px;
+            line-height: 1.1;
         }
         &__release-date{
             font-size: 12px;

@@ -1,4 +1,4 @@
-export interface Movie {
+export interface IMovie {
     id: number;
     title: string;
     overview: string;
