@@ -22,9 +22,9 @@ export const getMovies = async(endpoint: string, setMovies: React.Dispatch<React
     }
 }
 
-export const searchMovies = async(endpoint: string, query: string, setSearchResult: React.Dispatch<React.SetStateAction<Movie[]>>) => {
+export const searchMovies = async(endpoint: string, query: string, page: number, setSearchResult: React.Dispatch<React.SetStateAction<Movie[]>>) => {
     try {
-        const response: AxiosResponse = await axios.get(`${BASE_URL}${endpoint}${query}`, params);
+        const response: AxiosResponse = await axios.get(`${BASE_URL}${endpoint}?query=${query}&page=${page}`, params);
         console.log(response.data);
         setSearchResult(response.data.results);
     } catch (e) {

@@ -2,7 +2,7 @@ import React from "react";
 import './SearchItem.scss'
 import { Movie } from "../../models/movie";
 import { Link } from "react-router-dom";
-import { dateToLocaleString } from "../../util/dateUtil";
+import { dateToLocaleString } from "../../utils/dateUtil";
 
 type Props = {
     children?: React.ReactNode;

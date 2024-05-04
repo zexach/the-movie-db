@@ -5,6 +5,7 @@ import { Movie } from "../../models/movie";
 import MovieList from "../../components/MovieList/MovieList";
 import Searchbar from "../../components/Searchbar/Searchbar";
 import SearchResultList from "../../components/SearchResultList/SearchResultList";
+import useDebouncer from "../../hooks/useDebouncer";
 
 const MoviesPage: React.FC = () => {
 
@@ -16,25 +17,24 @@ const MoviesPage: React.FC = () => {
     const searchHandler = (query: string):void => {
         setSearchQuery(query);
     }
+
+    const debouncedSearch = useDebouncer(searchQuery, 1000);
     
     useEffect(() => {
         getMovies('/movie/top_rated', setMovies);
     }, []);
     
     useEffect(() => {
-        if (searchQuery.length > 2) {
-            setIsSearchActive(true);
-            searchMovies('/search/movie?query=', searchQuery, setSearchResult);
-        } else {
-            setIsSearchActive(false);
+        if (debouncedSearch.length > 2) {
+            searchMovies('/search/movie', debouncedSearch, 1, setSearchResult);
         }
-    }, [searchQuery])
+    }, [debouncedSearch])
 
     return(
         <>
         <div className="movies-page">
             <Searchbar placeholder="Search for a movie..." onSearch={searchHandler} />
-            { !isSearchActive ? <MovieList movieList={movies}/> : <SearchResultList searchResult={searchResult} /> }
+            { !(debouncedSearch.length > 2) ? <MovieList movieList={movies}/> : <SearchResultList searchResult={searchResult} /> }
         </div>
         </>
     );
