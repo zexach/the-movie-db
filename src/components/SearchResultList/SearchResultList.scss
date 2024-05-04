@@ -1,0 +1,7 @@
+@import '../../style/variables';
+
+.search-result-list{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}

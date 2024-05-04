@@ -4,6 +4,7 @@ import Sidebar from './components/layout/Sidebar/Sidebar';
 import MoviesPage from './pages/MoviesPage/MoviesPage';
 import { Routes, Route } from 'react-router-dom';
 import TVShowsPage from './pages/TVShowsPage/TVShowsPage';
+import MovieDetailsPage from './pages/MovieDetailsPage/MovieDetailsPage';
 
 const App: React.FC = () => {
     return (
@@ -13,6 +14,7 @@ const App: React.FC = () => {
             <Routes>
                 <Route path='/' element={<MoviesPage />} />
                 <Route path='/shows' element={<TVShowsPage />} />
+                <Route path='/movie/:id' element={<MovieDetailsPage />} />
             </Routes>
         </div>
     </div>

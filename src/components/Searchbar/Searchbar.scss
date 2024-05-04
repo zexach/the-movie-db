@@ -1,14 +1,13 @@
 @import '../../style/variables';
 
 .searchbar{
-    width: fit-content;
-    box-shadow: $black-box-shadow;
     &__section{
         padding: 0.5rem;
         display: flex;
         flex-direction: row;
         gap: 1rem;
         border-radius: 3px;
+        box-shadow: $black-box-shadow;
         background-color: $light-gray;
         &__input{
             width: 390px;

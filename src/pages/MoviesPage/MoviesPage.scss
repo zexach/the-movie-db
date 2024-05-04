@@ -3,10 +3,11 @@
 .movies-page{
     max-width: 100%;
     min-height: 100vh;
-    padding: 2rem;
+    padding: 5rem 2rem 2rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    background-color: $dark-blue;
+    gap: 5rem;
+    background: rgb(45,85,103);
+    background: linear-gradient(354deg, rgba(99,138,138,1), rgba(45,85,103,1) 43% 100%);
 }

@@ -1,28 +1,31 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useState } from "react";
 import './Searchbar.scss'
 import searchIcon from '../../assets/icons/search.svg'
 
 type Props = {
     children?: React.ReactNode;
     placeholder: string;
+    onSearch: (query: string) => void;
 }
 
-const Searchbar: React.FC<Props> = ({ placeholder }) => {
+const Searchbar: React.FC<Props> = ({ placeholder, onSearch }) => {
 
-    const handleSearch = (e: React.FormEvent) => {
-        e?.preventDefault();
-        console.log('heheh');
+    const [searchQuery, setSearchQuery] = useState<string>('');
+
+    const setSearch = (e: React.ChangeEvent<HTMLInputElement>):void => {
+        onSearch(e.target.value);
     }
 
     return(
         <>
-        <form onSubmit={handleSearch} className="searchbar">
             <div className="searchbar__section">
                 <img src={searchIcon} alt="search" />
-                <input type="text" placeholder={placeholder} className="searchbar__section__input" />
-                <button type="submit" className="searchbar__section__btn">Search</button>
+                <input 
+                    type="text"
+                    placeholder={placeholder}
+                    onChange={setSearch}
+                    className="searchbar__section__input" />
             </div>
-        </form>
         </>
     )
 }
