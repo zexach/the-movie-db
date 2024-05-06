@@ -1,0 +1,21 @@
+@import '../../../style/variables';
+
+.overview{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: $white;
+    &__tagline{
+        color: $light-gray-v1;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    &__info{
+        font-size: 14px;
+    }
+    &__additional{
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+    }
+}

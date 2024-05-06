@@ -1,7 +1,7 @@
 import { ICountry } from './country'
 import { IGenre } from './genre'
 import { ILanguage } from './language'
-import { IProductionCompanie } from './productionCompanie'
+import { IProductionCompany } from './productionCompany'
 
 export interface IDetailedMovie {
     adult: boolean,
@@ -9,7 +9,7 @@ export interface IDetailedMovie {
     belongs_to_collection: string, // TODO
     budget: number,
     genres: IGenre[],
-    homepages: string,
+    homepage: string,
     id: number,
     imdb_id: string,
     origin_country: string[],
@@ -18,7 +18,7 @@ export interface IDetailedMovie {
     overview: string,
     popularity: number,
     poster_path: string,
-    production_companies: IProductionCompanie[],
+    production_companies: IProductionCompany[],
     production_countries: ICountry[],
     release_date: string,
     revenue: number,

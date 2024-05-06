@@ -3,4 +3,15 @@
 .movie-details-page{
     max-width: 100%;
     min-height: 100vh;
+    &__header{
+        position: relative;
+        &__content{
+            height: 100vh;
+            padding: 0 4rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 3rem;
+        }
+    }
 }

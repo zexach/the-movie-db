@@ -1,0 +1,12 @@
+@import '../../../style/variables';
+
+.single-info{
+    &__title{
+        font-size: 15px;
+        font-weight: 500;
+    }
+        &__info{
+        font-weight: 700;
+        font-size: 20px;
+    }
+}

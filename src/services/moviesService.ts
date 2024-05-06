@@ -38,6 +38,7 @@ export const getSingleMovie = async(endpoint: string, id: number, setMovie: Reac
     try {
         const response: AxiosResponse = await axios.get(`${BASE_URL}${endpoint}/${id}`, params)
         console.log(response.data);
+        setMovie(response.data);
     } catch (e) {
         console.log(e);
     }
