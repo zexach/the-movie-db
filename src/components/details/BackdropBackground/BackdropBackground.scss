@@ -1,0 +1,13 @@
+.backdrop-background{
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    display: flex;;
+    &__image{
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        filter: blur(2px) brightness(30%);
+        
+    }
+}

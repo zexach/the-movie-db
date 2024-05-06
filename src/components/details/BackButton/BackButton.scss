@@ -1,0 +1,16 @@
+@import '../../../style/variables';
+
+.back-button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    color: $white;
+    position: absolute;
+    top: 10px;
+    left: 280px;
+    cursor: pointer;
+    &__text{
+        font-size: 14px;
+    }
+}

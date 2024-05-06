@@ -3,6 +3,7 @@ import axios, { AxiosResponse } from "axios";
 import { IMovie } from "../models/movie";
 import { ISearchResult } from "../models/searchResult";
 import { IDetailedMovie } from "../models/detailedMovie";
+import { IVideo } from "../models/video";
 
 const BASE_URL: string = 'https://api.themoviedb.org/3';
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -36,9 +37,20 @@ export const searchMovies = async(
 
 export const getSingleMovie = async(endpoint: string, id: number, setMovie: React.Dispatch<React.SetStateAction<IDetailedMovie | undefined>>) => {
     try {
-        const response: AxiosResponse = await axios.get(`${BASE_URL}${endpoint}/${id}`, params)
+        const response: AxiosResponse = await axios.get(`${BASE_URL}${endpoint}/${id}`, params);
         console.log(response.data);
         setMovie(response.data);
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+export const getTrailer = async(endpoint: string, id: number, setTrailer: React.Dispatch<React.SetStateAction<IVideo | undefined>>) => {
+    try {
+        const response: AxiosResponse = await axios.get(`${BASE_URL}${endpoint}/${id}/videos`, params);
+        console.log(response.data.results.filter((item: IVideo) => item.type === 'Trailer'));
+        const trailer: IVideo[] = response.data.results.filter((item: IVideo) => item.type === 'Trailer');
+        setTrailer(trailer[0]);
     } catch (e) {
         console.log(e);
     }

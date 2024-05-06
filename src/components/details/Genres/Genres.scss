@@ -1,0 +1,16 @@
+@import '../../../style/variables';
+
+.genres{
+    display: flex;
+    flex-direction: row;
+    color: $dark-blue;
+    &__title{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    &__genre{
+        padding: 0 0.5rem;
+        font-size: 16px;
+        font-weight: 700;
+    }
+}

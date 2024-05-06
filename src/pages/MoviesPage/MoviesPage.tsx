@@ -11,7 +11,7 @@ import { usePaginationContext } from "../../context/PaginationContext";
 
 const MoviesPage: React.FC = () => {
 
-    const { selectedPage } = usePaginationContext();
+    const { selectedPage, setSelectedPage } = usePaginationContext();
 
     const [movies, setMovies] = useState<IMovie[]>([]);
     const [searchResult, setSearchResult] = useState<ISearchResult | undefined>(undefined);
@@ -19,6 +19,7 @@ const MoviesPage: React.FC = () => {
 
     const searchHandler = (query: string):void => {
         setSearchQuery(query);
+        setSelectedPage(1);
     }
 
     const debouncedSearch = useDebouncer(searchQuery, 1000);
