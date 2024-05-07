@@ -1,19 +1,22 @@
 import React, { ChangeEvent, useState } from "react";
 import './Searchbar.scss'
 import searchIcon from '../../assets/icons/search.svg'
+import { useSearchContext } from "../../context/SearchContext";
+import { usePaginationContext } from "../../context/PaginationContext";
 
 type Props = {
     children?: React.ReactNode;
     placeholder: string;
-    onSearch: (query: string) => void;
 }
 
-const Searchbar: React.FC<Props> = ({ placeholder, onSearch }) => {
+const Searchbar: React.FC<Props> = ({ placeholder }) => {
 
-    const [searchQuery, setSearchQuery] = useState<string>('');
+    const { searchQuery, setSearchQuery } = useSearchContext();
+    const { setSelectedPage } = usePaginationContext();
 
     const setSearch = (e: React.ChangeEvent<HTMLInputElement>):void => {
-        onSearch(e.target.value);
+        setSearchQuery(e.target.value);
+        setSelectedPage(1);
     }
 
     return(
@@ -24,6 +27,7 @@ const Searchbar: React.FC<Props> = ({ placeholder, onSearch }) => {
                     type="text"
                     placeholder={placeholder}
                     onChange={setSearch}
+                    value={searchQuery}
                     className="searchbar__section__input" />
             </div>
         </>

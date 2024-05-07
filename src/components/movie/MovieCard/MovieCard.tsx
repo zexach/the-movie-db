@@ -1,8 +1,8 @@
 import React from "react";
 import './MovieCard.scss'
-import { IMovie } from "../../models/movie";
+import { IMovie } from "../../../models/movie";
 import { Link } from "react-router-dom";
-import { dateToLocaleString } from "../../utils/dateUtil";
+import { dateToLocaleString } from "../../../utils/dateUtil";
 
 type Props = {
     children?: React.ReactNode,

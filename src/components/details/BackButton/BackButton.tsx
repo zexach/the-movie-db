@@ -14,7 +14,7 @@ const BackButton: React.FC<Props> = ({ buttonText }) => {
 
     return(
         <>
-        <div onClick={() => navigate('/')} className="back-button">
+        <div onClick={() => navigate(-1)} className="back-button">
             <img src={arrowLeft} alt="arrow" className="back-button__icon" />
             <p className="back-button__text">{buttonText}</p>
         </div>

@@ -22,7 +22,7 @@ const Overview: React.FC<Props> = ({ tagline, overview, date, rating, revenue })
             <p className="overview__tagline"><i>{tagline}</i></p>
             <p className="overview__info">{overview}</p>
             <div className="overview__additional">
-                <SingleInfo infoTitle="Production date" info={dateToLocaleString(dateString)} />
+                { date ? <SingleInfo infoTitle="Production date" info={dateToLocaleString(dateString)} /> : '' }
                 <SingleInfo infoTitle="Rating" info={rating?.toFixed(1)} />
                 <SingleInfo infoTitle="Revenue" info={`$ ${revenue?.toLocaleString()}`} />
             </div>

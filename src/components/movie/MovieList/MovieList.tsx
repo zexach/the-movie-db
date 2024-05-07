@@ -1,8 +1,8 @@
 import React from "react";
 import './MovieList.scss'
-import { IMovie } from "../../models/movie";
+import { IMovie } from "../../../models/movie";
+import NoResults from "../../NoResults/Noresults";
 import MovieCard from "../MovieCard/MovieCard";
-import NoResults from "../NoResults/Noresults";
 
 type Props = {
     children?: React.ReactNode,

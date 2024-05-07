@@ -11,10 +11,11 @@ const BackdropImage: React.FC<Props> = ({ imagePath }) => {
 
     return(
         <>
-        <img 
-            src={imagePath === null ? noImageIcon : `https://image.tmdb.org/t/p/w500${imagePath}`}
+        { imagePath ? 
+            <img 
+            src={`https://image.tmdb.org/t/p/w500${imagePath}`}
             alt="backdrop"
-            className="backdrop-image" />
+            className="backdrop-image" /> : '' }
         </>
     );
 }
