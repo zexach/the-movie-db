@@ -12,6 +12,7 @@ import { IVideo } from "../../models/video";
 import TrailerVideo from "../../components/details/TrailerVideo/TrailerVideo";
 import Genres from "../../components/details/Genres/Genres";
 import BackButton from "../../components/details/BackButton/BackButton";
+import Loader from "../../components/Loader/Loader";
 
 const MovieDetailsPage: React.FC = () => {
 
@@ -28,6 +29,7 @@ const MovieDetailsPage: React.FC = () => {
 
     return(
         <>
+        { movie ?
         <div className="movie-details-page">
             <BackdropBackground imagePath={movie?.backdrop_path} />
             <BackButton buttonText="Back" />
@@ -45,7 +47,7 @@ const MovieDetailsPage: React.FC = () => {
                     <Genres genres={movie?.genres} />
                 </div>
             </div>
-        </div>
+        </div> : <div className="movie-details-loading"><Loader /></div> }
         </>
     );
 }

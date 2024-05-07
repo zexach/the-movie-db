@@ -14,7 +14,7 @@ const SearchItem: React.FC<Props> = ({ item }) => {
 
     return(
         <>
-        <Link to={`/movie/${item.id}`}>
+        <Link to={item.isMovie ? `/movie/${item.id}` : `/show/${item.id}`}>
             <div className="search-item">
                 <img src={item.poster_path === null ? noImageIcon : `https://image.tmdb.org/t/p/w500${item.poster_path}`} alt="Poster" className="search-item__poster" />
                 <div className="search-item__details">

@@ -24,7 +24,7 @@ const Overview: React.FC<Props> = ({ tagline, overview, date, rating, revenue })
             <div className="overview__additional">
                 { date ? <SingleInfo infoTitle="Production date" info={dateToLocaleString(dateString)} /> : '' }
                 <SingleInfo infoTitle="Rating" info={rating?.toFixed(1)} />
-                <SingleInfo infoTitle="Revenue" info={`$ ${revenue?.toLocaleString()}`} />
+                { (revenue && revenue > 0) ? <SingleInfo infoTitle="Revenue" info={ `$ ${revenue?.toLocaleString()}`} /> : '' }
             </div>
         </div>
         </>

@@ -10,7 +10,10 @@ const TrailerVideo: React.FC<Props> = ({ trailerLink }) => {
 
     return(
     <>
-    <iframe className="trailer-video" width="600"
+    <iframe 
+        className="trailer-video"
+        title="Trailer"
+        width="600"
         height="315"
         src={`https://www.youtube.com/embed/${trailerLink}`}
         ></iframe>

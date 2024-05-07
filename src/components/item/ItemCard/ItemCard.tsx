@@ -13,7 +13,7 @@ const ItemCard: React.FC<Props> = ({ item }) => {
 
     return(
         <>
-        <Link to={`/movie/${item.id.toString()}`}>
+        <Link to={item.isMovie ? `/movie/${item.id.toString()}` : `/show/${item.id.toString()}`}>
             <div className="item-card">
                 <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt="item-card" className="item-card__img" />
                 <div className="item-card__details">

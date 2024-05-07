@@ -22,6 +22,7 @@ const MoviesPage: React.FC = () => {
     
     useEffect(() => {
         getMovies('/movie/top_rated', setMovies);
+        setSelectedPage(1);
     }, []);
     
     useEffect(() => {

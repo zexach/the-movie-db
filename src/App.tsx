@@ -5,6 +5,7 @@ import MoviesPage from './pages/MoviesPage/MoviesPage';
 import { Routes, Route } from 'react-router-dom';
 import TVShowsPage from './pages/TVShowsPage/TVShowsPage';
 import MovieDetailsPage from './pages/MovieDetailsPage/MovieDetailsPage';
+import TVShowDetailsPage from './pages/TVShowDetailsPage/TVShowDetailsPage';
 
 const App: React.FC = () => {
     return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
                 <Route path='/' element={<MoviesPage />} />
                 <Route path='/shows' element={<TVShowsPage />} />
                 <Route path='/movie/:id' element={<MovieDetailsPage />} />
+                <Route path='/show/:id' element={<TVShowDetailsPage />} />
             </Routes>
         </div>
     </div>

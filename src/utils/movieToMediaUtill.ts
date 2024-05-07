@@ -17,6 +17,7 @@ export const movieToMediaUtil = (movie: IMovie): IMedia => {
         name: movie.title,
         video: movie.video ? true : false,
         vote_average: movie.vote_average,
-        vote_count: movie.vote_count
+        vote_count: movie.vote_count,
+        isMovie: true
     }
 }

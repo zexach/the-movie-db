@@ -1,6 +1,6 @@
 @import '../../style/variables';
 
-.movie-details-page{
+.tvshow-details-page{
     max-width: 100%;
     min-height: 100vh;
     display: flex;
@@ -8,21 +8,6 @@
     align-items: center;
     background-color: $light-gray;
     background: linear-gradient(90deg, $white, $light-gray 100% 20%);
-    &__backdrop{
-        width: 100%;
-        position: relative;
-        z-index: -1;
-        &__image{
-            height: 400px;
-            position: relative;
-            z-index: -1;
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            filter: blur(2px) brightness(40%);
-            
-        }
-    }
     &__content{
         padding: 2rem;
         display: flex;
@@ -37,7 +22,7 @@
     }
 }
 
-.movie-details-loading{
+.tvshow-details-loading{
     width: 100%;
     height: 100vh;
     display: flex;
