@@ -17,10 +17,9 @@ const SearchResultList: React.FC<Props> = ({ searchResult }) => {
         <div className="search-result-list">
             { searchResult ? 
                 searchResult.results.length > 0 ? 
-                    searchResult.results.map((movie) => <SearchItem key={movie.id} movie={movie} />) : <NoResults message="No movies were found" />
-                : <NoResults message="Loading..." /> }
-            { searchResult && searchResult.results.length > 0 ? 
-                <Pagination total_pages={searchResult?.total_pages} current_page={searchResult?.page} /> : '' }
+                    searchResult.results.map((item) => <SearchItem key={item.id} item={item} />) : <NoResults message="No results were found" />
+                : <NoResults message="Loading..." /> } 
+            <Pagination total_pages={searchResult?.total_pages} current_page={searchResult?.page} />     
         </div>
         </>
     );

@@ -1,8 +1,8 @@
-import { IMovie } from "./movie";
+import { IMedia } from "./media";
 
 export interface ISearchResult {
     page: number,
-    results: IMovie[],
+    results: IMedia[],
     total_pages: number,
     total_results: number
 }

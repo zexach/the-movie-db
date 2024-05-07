@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 import './MoviesPage.scss'
-import { getMovies, searchMovies } from "../../services/moviesService";
-import MovieList from "../../components/movie/MovieList/MovieList";
+import ItemList from "../../components/item/ItemList/ItemList";
 import Searchbar from "../../components/Searchbar/Searchbar";
 import SearchResultList from "../../components/SearchResultList/SearchResultList";
-import useDebouncer from "../../hooks/useDebouncer";
-import { IMovie } from "../../models/movie";
+import { IMedia } from "../../models/media";
 import { ISearchResult } from "../../models/searchResult";
 import { usePaginationContext } from "../../context/PaginationContext";
 import { useSearchContext } from "../../context/SearchContext";
+import { getMovies, searchMovies } from "../../services/moviesService";
+import useDebouncer from "../../hooks/useDebouncer";
 
 const MoviesPage: React.FC = () => {
 
-    const { selectedPage } = usePaginationContext();
+    const { selectedPage, setSelectedPage } = usePaginationContext();
     const { searchQuery } = useSearchContext();
 
-    const [movies, setMovies] = useState<IMovie[]>([]);
+    const [movies, setMovies] = useState<IMedia[]>([]);
     const [searchResult, setSearchResult] = useState<ISearchResult | undefined>(undefined);
 
     const debouncedSearch = useDebouncer(searchQuery, 1000);
@@ -34,7 +34,7 @@ const MoviesPage: React.FC = () => {
         <>
         <div className="movies-page">
             <Searchbar placeholder="Search for a movie..." />
-            { !(debouncedSearch.length > 2) ? <MovieList movieList={movies}/> : <SearchResultList searchResult={searchResult} />}
+            { !(debouncedSearch.length > 2) ? <ItemList itemList={movies}/> : <SearchResultList searchResult={searchResult} />}
         </div>
         </>
     );

@@ -1,27 +1,27 @@
 import React from "react";
 import './SearchItem.scss'
-import { IMovie } from "../../models/movie";
 import { Link } from "react-router-dom";
 import { dateToLocaleString } from "../../utils/dateUtil";
 import noImageIcon from '../../assets/images/no-image.jpg';
+import { IMedia } from "../../models/media";
 
 type Props = {
     children?: React.ReactNode;
-    movie: IMovie;
+    item: IMedia;
 }
 
-const SearchItem: React.FC<Props> = ({ movie }) => {
+const SearchItem: React.FC<Props> = ({ item }) => {
 
     return(
         <>
-        <Link to={`/movie/${movie.id}`}>
+        <Link to={`/movie/${item.id}`}>
             <div className="search-item">
-                <img src={movie.poster_path === null ? noImageIcon : `https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="Poster" className="search-item__poster" />
+                <img src={item.poster_path === null ? noImageIcon : `https://image.tmdb.org/t/p/w500${item.poster_path}`} alt="Poster" className="search-item__poster" />
                 <div className="search-item__details">
-                    <h3 className="search-item__details__title">{movie.title}</h3>
-                    <p className="search-item__details__release-date">{dateToLocaleString(movie.release_date)}</p>
+                    <h3 className="search-item__details__title">{item.name}</h3>
+                    <p className="search-item__details__release-date">{dateToLocaleString(item.first_air_date)}</p>
                     <p className="search-item__details__desc">
-                        {movie.overview.length > 280 ? (movie.overview.substring(0, 280) + '...') : movie.overview}
+                        {item.overview.length > 280 ? (item.overview.substring(0, 280) + '...') : item.overview}
                     </p>
                 </div>
             </div>
