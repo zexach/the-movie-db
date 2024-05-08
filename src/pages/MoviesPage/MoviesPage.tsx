@@ -13,7 +13,7 @@ import useDebouncer from "../../hooks/useDebouncer";
 
 const MoviesPage: React.FC = () => {
 
-    const { selectedPage, setSelectedPage } = usePaginationContext();
+    const { selectedPage } = usePaginationContext();
     const { searchQuery } = useSearchContext();
 
     const [movies, setMovies] = useState<IMedia[]>([]);
