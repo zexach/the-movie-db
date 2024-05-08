@@ -1,5 +1,5 @@
 import React from "react";
-import axios, { AxiosError, AxiosResponse } from "axios";
+import axios, { AxiosResponse } from "axios";
 import { ISearchResult } from "../models/searchResult";
 import { IVideo } from "../models/video";
 import { IMedia } from "../models/media";
