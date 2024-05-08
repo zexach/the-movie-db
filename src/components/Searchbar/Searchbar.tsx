@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React from "react";
 import './Searchbar.scss'
 import searchIcon from '../../assets/icons/search.svg'
 import { useSearchContext } from "../../context/SearchContext";

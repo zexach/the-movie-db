@@ -13,7 +13,7 @@ import SearchResultList from "../../components/SearchResultList/SearchResultList
 
 const TVShowsPage: React.FC = () => {
 
-    const { selectedPage, setSelectedPage } = usePaginationContext();
+    const { selectedPage } = usePaginationContext();
     const { searchQuery } = useSearchContext();
 
     const [tvShows, setTvShows] = useState<IMedia[]>([]);

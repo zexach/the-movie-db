@@ -30,7 +30,7 @@ const MoviesPage: React.FC = () => {
         if (debouncedSearch.length > 2) {
             searchItems('/search/movie', debouncedSearch, selectedPage, setSearchResult, movieToMediaUtil);
         }
-    }, [debouncedSearch, selectedPage])
+    }, [debouncedSearch, selectedPage, setSelectedPage])
 
     return(
         <>

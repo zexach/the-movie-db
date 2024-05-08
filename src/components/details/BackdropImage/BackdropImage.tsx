@@ -1,6 +1,5 @@
 import React from "react";
 import './BackdropImage.scss'
-import noImageIcon from '../../../assets/images/no-image.jpg'
 
 type Props = {
     children?: React.ReactNode;
