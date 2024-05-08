@@ -5,10 +5,20 @@
   padding: 0;
   box-sizing: border-box;
   display: flex;
+  flex-direction: row;
   font-size: 48px;
   &__pages{
     flex: 1;
     padding-left: 265px;
+  }
+}
+
+@media screen and (max-width: 960px){
+  .app{
+    flex-direction: column;
+    &__pages{
+      padding-left: 0;
+    }
   }
 }
 

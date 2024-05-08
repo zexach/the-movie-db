@@ -20,10 +20,10 @@ const Pagination: React.FC<Props> = ({ total_pages, current_page }) => {
         return null;
     }
 
-    const startPage: number = Math.max(1, current_page - 4);
-    const endPage: number = Math.min(total_pages, current_page + 5);
+    const startPage: number = Math.max(1, current_page - 3);
+    const endPage: number = Math.min(total_pages, current_page + 3);
 
-    const pages = Array.from({ length: (current_page + 10 <= total_pages) ? 10 : (endPage - startPage + 1) }, (_, i) => startPage + i);
+    const pages = Array.from({ length: (current_page + 7 <= total_pages) ? 7 : (endPage - startPage + 1) }, (_, i) => startPage + i);
 
     return(
         <>

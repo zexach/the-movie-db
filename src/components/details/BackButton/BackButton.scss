@@ -14,3 +14,10 @@
         font-size: 14px;
     }
 }
+
+@media screen and (max-width: 960px){
+    .back-button{
+        top: 120px;
+        left: 10px;
+    }
+}

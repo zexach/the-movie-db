@@ -44,3 +44,11 @@
     align-items: center;
     background: linear-gradient(90deg, $white, $light-gray 100% 20%);
 }
+
+@media screen and (max-width: 960px){
+    .movie-details-page{
+        &__content{
+            flex-direction: column;
+        }
+    }
+}

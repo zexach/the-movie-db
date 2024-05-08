@@ -36,3 +36,17 @@
         }
     }
 }
+
+
+@media screen and (max-width: 800px){
+    .search-item{
+        &__details{
+            &__title{
+                font-size: 18px;
+            }
+            &__desc{
+                display: none;
+            }
+        }
+    }   
+}
