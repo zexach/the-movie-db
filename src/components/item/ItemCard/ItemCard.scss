@@ -1,8 +1,8 @@
 @import '../../../style/variables';
 
 .item-card{
-    width: 430px;
-    height: 250px;
+    width: 350px;
+    height: 220px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -11,8 +11,8 @@
     background: rgb(243, 246, 247);
     cursor: pointer;
     &__img{
-        width: 150px;
-        height: 250px;
+        width: 130px;
+        height: 220px;
         object-fit: cover;
         border-radius: 3px 0 0 3px;        
     }
@@ -25,7 +25,7 @@
         gap: 2rem;
         &__title{
             font-family: $title-font;
-            font-size: 40px;
+            font-size: 32px;
             font-weight: 700;
             text-align: center;
             line-height: 0.9;
@@ -40,9 +40,9 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                font-size: 16px;
+                font-size: 14px;
                 &__span{
-                    font-size: 20px;
+                    font-size: 16px;
                     font-weight: 700;
                 }
             }

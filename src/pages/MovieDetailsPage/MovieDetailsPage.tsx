@@ -13,23 +13,26 @@ import TrailerVideo from "../../components/details/TrailerVideo/TrailerVideo";
 import Genres from "../../components/details/Genres/Genres";
 import BackButton from "../../components/details/BackButton/BackButton";
 import Loader from "../../components/Loader/Loader";
+import NoResults from "../../components/NoResults/Noresults";
 
 const MovieDetailsPage: React.FC = () => {
 
     const { id } = useParams();
     const [movie, setMovie] = useState<IDetailedMovie>();
     const [trailer, setTrailer] = useState<IVideo>();
+    const [isAvailable, setIsAvailable] = useState<boolean>(true);
 
     useEffect(() => {
         if (id) {
-            getSingleMedia('/movie', parseInt(id), setMovie)
+            getSingleMedia('/movie', parseInt(id), setMovie, setIsAvailable)
             getTrailer('/movie', parseInt(id), setTrailer);
         }
     }, [id]);
 
     return(
         <>
-        { movie ?
+        { isAvailable ? 
+        movie ?
         <div className="movie-details-page">
             <BackdropBackground imagePath={movie?.backdrop_path} />
             <BackButton buttonText="Back" />
@@ -43,11 +46,13 @@ const MovieDetailsPage: React.FC = () => {
                         overview={movie?.overview}
                         date={movie?.release_date.toString()}
                         rating={movie?.vote_average}
-                        revenue={movie?.revenue} />
+                        revenue={movie?.revenue}
+                        budget={movie.budget} />
                     <Genres genres={movie?.genres} />
                 </div>
             </div>
-        </div> : <div className="movie-details-loading"><Loader /></div> }
+        </div> : <div className="movie-details-loading"><Loader /></div>
+        : <div className="movie-details-loading"><NoResults message="BZZZT! Page doesn't exist!" textColor="#000000" /></div> }
         </>
     );
 }

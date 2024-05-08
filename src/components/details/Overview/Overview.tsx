@@ -8,11 +8,12 @@ type Props = {
     tagline: string | undefined,
     overview: string | undefined,
     date: string | undefined,
-    rating: number | undefined
-    revenue: number | undefined
+    rating: number | undefined,
+    revenue: number | undefined,
+    budget: number | undefined
 }
 
-const Overview: React.FC<Props> = ({ tagline, overview, date, rating, revenue }) => {
+const Overview: React.FC<Props> = ({ tagline, overview, date, rating, revenue, budget }) => {
 
     const dateString = date ? date.toString() : '';
 
@@ -24,6 +25,7 @@ const Overview: React.FC<Props> = ({ tagline, overview, date, rating, revenue })
             <div className="overview__additional">
                 { date ? <SingleInfo infoTitle="Production date" info={dateToLocaleString(dateString)} /> : '' }
                 <SingleInfo infoTitle="Rating" info={rating?.toFixed(1)} />
+                { (budget && budget > 0) ? <SingleInfo infoTitle="Budget" info={ `$ ${budget.toLocaleString()}` } /> : '' }
                 { (revenue && revenue > 0) ? <SingleInfo infoTitle="Revenue" info={ `$ ${revenue?.toLocaleString()}`} /> : '' }
             </div>
         </div>

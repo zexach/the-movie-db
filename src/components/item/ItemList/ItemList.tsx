@@ -14,7 +14,7 @@ const ItemList: React.FC<Props> = ({ itemList }) => {
     return(
         <>
         <div className="item-list">
-            { itemList ? itemList.map((item) => <ItemCard key={item.id} item={item} />) : <NoResults message="No results were found" /> }
+            { itemList ? itemList.map((item) => <ItemCard key={item.id} item={item} />) : <NoResults message="No results were found" textColor="#ffffff" /> }
         </div>
         </>
     );

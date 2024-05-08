@@ -1,5 +1,5 @@
 import React from "react";
-import axios, { AxiosResponse } from "axios";
+import axios, { AxiosError, AxiosResponse } from "axios";
 import { ISearchResult } from "../models/searchResult";
 import { IVideo } from "../models/video";
 import { IMedia } from "../models/media";
@@ -51,12 +51,20 @@ export const searchItems = async<T>(
     }
 }
 
-export const getSingleMedia = async<T>(endpoint: string, id: number, setMedia: React.Dispatch<React.SetStateAction<T | undefined>>) => {
+export const getSingleMedia = async<T>(
+    endpoint: string,
+    id: number,
+    setMedia: React.Dispatch<React.SetStateAction<T | undefined>>,
+    setIsAvailable: React.Dispatch<React.SetStateAction<boolean>>) => {
     try {
         const response: AxiosResponse = await axios.get(`${BASE_URL}${endpoint}/${id}`, params);
         setMedia(response.data);
-    } catch (e) {
+    } catch (e: any) {
         console.log(e);
+        if (e.response.status === 404) {
+            setIsAvailable(false);
+        }
+
     }
 }
 

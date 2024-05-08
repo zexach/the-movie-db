@@ -13,23 +13,26 @@ import Title from "../../components/details/Title/Title";
 import Overview from "../../components/details/Overview/Overview";
 import Genres from "../../components/details/Genres/Genres";
 import Loader from "../../components/Loader/Loader";
+import NoResults from "../../components/NoResults/Noresults";
 
 const TVShowDetailsPage: React.FC = () => {
 
     const { id } = useParams();
     const [show, setShow] = useState<IDetailedShow>();
     const [trailer, setTrailer] = useState<IVideo>();
+    const [isAvailable, setIsAvailable] = useState<boolean>(true);
 
     useEffect(() => {
         if (id) {
-            getSingleMedia('/tv', parseInt(id), setShow);
+            getSingleMedia('/tv', parseInt(id), setShow, setIsAvailable);
             getTrailer('/tv', parseInt(id), setTrailer);
         }
     }, [id]);
 
     return(
         <>
-        { show ?
+        { isAvailable ?
+         show ?
         <div className="tvshow-details-page">
             <BackdropBackground imagePath={show?.backdrop_path} />
             <BackButton buttonText="Back" />
@@ -43,11 +46,13 @@ const TVShowDetailsPage: React.FC = () => {
                         overview={show?.overview}
                         date={show?.first_air_date.toString()}
                         rating={show?.vote_average}
-                        revenue={0} />
+                        revenue={0}
+                        budget={0} />
                     <Genres genres={show?.genres} />
                 </div>
             </div>
-        </div> : <div className="tvshow-details-loading"><Loader /></div> }
+        </div> : <div className="tvshow-details-loading"><Loader /></div>
+        : <div className="tvshow-details-loading"><NoResults message="BZZZT! Page doesn't exist" textColor="#000000" /></div> }
         </>
     );
 }

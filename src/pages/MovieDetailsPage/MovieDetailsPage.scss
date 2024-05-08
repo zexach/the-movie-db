@@ -6,7 +6,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $light-gray;
     background: linear-gradient(90deg, $white, $light-gray 100% 20%);
     &__backdrop{
         width: 100%;
@@ -43,4 +42,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(90deg, $white, $light-gray 100% 20%);
 }

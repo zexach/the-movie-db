@@ -18,7 +18,7 @@ const SearchResultList: React.FC<Props> = ({ searchResult }) => {
         <div className="search-result-list">
             { searchResult ? 
                 searchResult.results.length > 0 ? 
-                    searchResult.results.map((item) => <SearchItem key={item.id} item={item} />) : <NoResults message="No results were found" />
+                    searchResult.results.map((item) => <SearchItem key={item.id} item={item} />) : <NoResults message="No results were found" textColor="#ffffff" />
                 : <Loader /> } 
             { (searchResult && searchResult?.total_results > 0) ? <Pagination total_pages={searchResult?.total_pages} current_page={searchResult?.page} /> : '' }     
         </div>
