@@ -6,10 +6,10 @@ import { usePaginationContext } from "../../context/PaginationContext";
 import { useSearchContext } from "../../context/SearchContext";
 import { getItems, searchItems } from "../../services/mediaService";
 import { movieToMediaUtil } from "../../utils/movieToMediaUtill";
-import useDebouncer from "../../hooks/useDebouncer";
 import ItemList from "../../components/item/ItemList/ItemList";
 import Searchbar from "../../components/Searchbar/Searchbar";
 import SearchResultList from "../../components/SearchResultList/SearchResultList";
+import useDebouncer from "../../hooks/useDebouncer";
 
 const MoviesPage: React.FC = () => {
 
@@ -23,14 +23,13 @@ const MoviesPage: React.FC = () => {
     
     useEffect(() => {
         getItems('/movie/top_rated', setMovies, movieToMediaUtil);
-        setSelectedPage(1);
     }, []);
     
     useEffect(() => {
         if (debouncedSearch.length > 2) {
             searchItems('/search/movie', debouncedSearch, selectedPage, setSearchResult, movieToMediaUtil);
         }
-    }, [debouncedSearch, selectedPage, setSelectedPage])
+    }, [debouncedSearch, selectedPage])
 
     return(
         <>
