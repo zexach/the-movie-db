@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import './MovieDetailsPage.scss'
 import { useParams } from "react-router-dom";
-import { getSingleMovie, getTrailer } from "../../services/moviesService";
+import { getSingleMedia, getTrailer } from "../../services/mediaService";
+import { IVideo } from "../../models/video";
 import { IDetailedMovie } from "../../models/detailedMovie";
 import BackdropImage from "../../components/details/BackdropImage/BackdropImage";
 import PosterImage from "../../components/details/PosterImage/PosterImage";
 import Title from "../../components/details/Title/Title";
 import Overview from "../../components/details/Overview/Overview";
 import BackdropBackground from "../../components/details/BackdropBackground/BackdropBackground";
-import { IVideo } from "../../models/video";
 import TrailerVideo from "../../components/details/TrailerVideo/TrailerVideo";
 import Genres from "../../components/details/Genres/Genres";
 import BackButton from "../../components/details/BackButton/BackButton";
@@ -22,7 +22,7 @@ const MovieDetailsPage: React.FC = () => {
 
     useEffect(() => {
         if (id) {
-            getSingleMovie('/movie', parseInt(id), setMovie)
+            getSingleMedia('/movie', parseInt(id), setMovie)
             getTrailer('/movie', parseInt(id), setTrailer);
         }
     }, [id]);

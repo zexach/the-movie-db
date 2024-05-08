@@ -2,6 +2,8 @@
 
 .poster-image{
     width: 260px;
+    height: 400px;
+    object-fit: cover;
     border-radius: 3px;
     box-shadow: $black-box-shadow;
 }

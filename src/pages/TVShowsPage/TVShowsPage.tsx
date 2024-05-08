@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import './TVShowsPage.scss'
-import Searchbar from "../../components/Searchbar/Searchbar";
-import ItemList from "../../components/item/ItemList/ItemList";
-import SearchResultList from "../../components/SearchResultList/SearchResultList";
 import { ISearchResult } from "../../models/searchResult";
 import { IMedia } from "../../models/media";
 import { usePaginationContext } from "../../context/PaginationContext";
 import { useSearchContext } from "../../context/SearchContext";
-import { getTVShows, searchTVShows } from "../../services/tvShowsService";
+import { getItems, searchItems } from "../../services/mediaService";
+import { tvShowToMediaUtil } from "../../utils/tvShowToMediaUtil";
 import useDebouncer from "../../hooks/useDebouncer";
+import Searchbar from "../../components/Searchbar/Searchbar";
+import ItemList from "../../components/item/ItemList/ItemList";
+import SearchResultList from "../../components/SearchResultList/SearchResultList";
 
 const TVShowsPage: React.FC = () => {
 
@@ -21,12 +22,12 @@ const TVShowsPage: React.FC = () => {
     const debouncedSearch = useDebouncer(searchQuery, 1000);
 
     useEffect(() => {
-        getTVShows('/tv/top_rated', setTvShows);
+        getItems('/tv/top_rated', setTvShows, tvShowToMediaUtil);
     }, []);
 
     useEffect(() => {
         if (debouncedSearch.length > 2) {
-            searchTVShows('/search/tv', debouncedSearch, selectedPage, setSearchResult);
+            searchItems('/search/tv', debouncedSearch, selectedPage, setSearchResult, tvShowToMediaUtil);
         }
     }, [debouncedSearch, selectedPage])
 

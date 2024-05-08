@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './TVShowDetailsPage.scss'
 import { useParams } from "react-router-dom";
-import { getSingleShow } from "../../services/tvShowsService";
-import { getTrailer } from "../../services/moviesService";
+import { getSingleMedia, getTrailer } from "../../services/mediaService";
 import { IDetailedShow } from "../../models/detailedShow";
 import { IVideo } from "../../models/video";
 import BackdropBackground from "../../components/details/BackdropBackground/BackdropBackground";
@@ -23,7 +22,7 @@ const TVShowDetailsPage: React.FC = () => {
 
     useEffect(() => {
         if (id) {
-            getSingleShow('/tv', parseInt(id), setShow)
+            getSingleMedia('/tv', parseInt(id), setShow);
             getTrailer('/tv', parseInt(id), setTrailer);
         }
     }, [id]);

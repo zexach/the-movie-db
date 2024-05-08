@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import './MoviesPage.scss'
-import ItemList from "../../components/item/ItemList/ItemList";
-import Searchbar from "../../components/Searchbar/Searchbar";
-import SearchResultList from "../../components/SearchResultList/SearchResultList";
 import { IMedia } from "../../models/media";
 import { ISearchResult } from "../../models/searchResult";
 import { usePaginationContext } from "../../context/PaginationContext";
 import { useSearchContext } from "../../context/SearchContext";
-import { getMovies, searchMovies } from "../../services/moviesService";
+import { getItems, searchItems } from "../../services/mediaService";
+import { movieToMediaUtil } from "../../utils/movieToMediaUtill";
 import useDebouncer from "../../hooks/useDebouncer";
+import ItemList from "../../components/item/ItemList/ItemList";
+import Searchbar from "../../components/Searchbar/Searchbar";
+import SearchResultList from "../../components/SearchResultList/SearchResultList";
 
 const MoviesPage: React.FC = () => {
 
@@ -21,13 +22,13 @@ const MoviesPage: React.FC = () => {
     const debouncedSearch = useDebouncer(searchQuery, 1000);
     
     useEffect(() => {
-        getMovies('/movie/top_rated', setMovies);
+        getItems('/movie/top_rated', setMovies, movieToMediaUtil);
         setSelectedPage(1);
     }, []);
     
     useEffect(() => {
         if (debouncedSearch.length > 2) {
-            searchMovies('/search/movie', debouncedSearch, selectedPage, setSearchResult);
+            searchItems('/search/movie', debouncedSearch, selectedPage, setSearchResult, movieToMediaUtil);
         }
     }, [debouncedSearch, selectedPage])
 
