@@ -19,3 +19,16 @@
         gap: 5rem;
     }
 }
+
+@media screen and (max-width: 620px) {
+    .overview{
+        align-items: center;
+        &__tagline{
+            font-size: 16px;
+        }
+        &__additional{
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+    }
+}

@@ -68,8 +68,14 @@
 
 @media screen and (max-width: 780px) {
     .navbar{
-        &__pages{
-            display: none;
+        height: 100px;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        &__logos{
+            &__logo{
+                width: 150px;
+            }
         }
     }
 }

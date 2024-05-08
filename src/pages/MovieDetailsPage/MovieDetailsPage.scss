@@ -49,6 +49,9 @@
     .movie-details-page{
         &__content{
             flex-direction: column;
+            &__info{
+                align-items: center;
+            }
         }
     }
 }
