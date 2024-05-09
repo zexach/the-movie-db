@@ -21,14 +21,14 @@ const Navbar: React.FC = () => {
             <div className="navbar__pages">
                 <Link to='/'>
                     <div className="navbar__pages__page">
-                        <img src={movieIcon} alt="movie" />
-                        <p className="navbar__pages__page__name">Movies</p>
-                    </div>
-                </Link>
-                <Link to='/shows'>
-                    <div className="navbar__pages__page">
                         <img src={tvShowIcon} alt="movie" />
                         <p className="navbar__pages__page__name">TV Shows</p>
+                    </div>
+                </Link>
+                <Link to='/movies'>
+                    <div className="navbar__pages__page">
+                        <img src={movieIcon} alt="movie" />
+                        <p className="navbar__pages__page__name">Movies</p>
                     </div>
                 </Link>
             </div>
