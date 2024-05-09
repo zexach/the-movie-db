@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+# RUBICON x The Movie Database (TMDB)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## App summary
 
-In the project directory, you can run:
+The app has the functionalities of displaying the top 10 rated TV shows and the top 10 rated movies, a search function for both, and a detailed view for individual items. The app is fully responsive for all devices.
 
-### `npm start`
+## Live demo: https://test-rubi-ez.netlify.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to start application
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* clone this repository: `git clone https://github.com/zexach/the-movie-db`
+* move to directory: `cd the-movie-db`
+* install packages: `npm install`
+* create `.env` file in root directory and add variable to file: `REACT_APP_API_KEY=6e45268e5987205205e3f45dabd51f36` (API_KEY is valid and was created for development purpose)
+* start the application: `npm start`
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `npm run build`
+## Notes
+Previous instructions should be enough to run the application. If you still have problems running the app, I suggest **visiting the live demo** of the application, as it's the same version of the application, just deployed using the Netlify service.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## App features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Clicking on a page in navigation loads the top 10 MOVIES / TV SHOWS depending on the selected page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* The search field is live and react to any change in the input field.
 
-### `npm run eject`
+* The search fire a request on the search endpoint from TMDB.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* The search is performed only when there are 3 or more characters in the search bar and it is triggered only one second after the user has stopped typing.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* When there are fewer than 3 characters in the search bar, the content reverts back to the top 10 MOVIES/TV SHOWS.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* When the search is performed, results appear under the search box.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Switching between tabs while searching triggers the search again with the same search term for the selected tab and updates the results.
 
-## Learn More
+* When the user clicks on a specific MOVIE/TV SHOW, he is taken to the details view.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* The Detailed View of the Movie/TV Show shows the cover image on top and in the case of Movies/TV Shows which have a trailer shows the trailer video instead of the cover image. Below the image/trailer information regarding the selected Movie/TV Show are shown.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* The Back Button returns the user back to where he was and with the same state before clicking to see more information about a Movie/TV Show. 
+
+
+# Technical information
+* App is created with **React** + **Typescript**
+* **React Router** is used for routing
+* **axios** is used for making HTTPS requests
+* **React Context** is used for global state management
+* **SCSS** is utilized for styling, leveraging its features like variables, mixins, and nesting for a more maintainable and organized styling approach
+
+## Movies page
+
+![alt text](image.png)
+
+## TV Shows page
+![alt text](image-1.png)
+
+## Search 
+![alt text](image-2.png)
+
+## Details page
+![alt text](image-3.png)
+
+

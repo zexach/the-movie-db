@@ -1,13 +1,21 @@
 import React from 'react';
 import './style/App.scss';
+import { useEffect } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Sidebar from './components/layout/Sidebar/Sidebar';
 import MoviesPage from './pages/MoviesPage/MoviesPage';
-import { Routes, Route } from 'react-router-dom';
 import TVShowsPage from './pages/TVShowsPage/TVShowsPage';
 import MovieDetailsPage from './pages/MovieDetailsPage/MovieDetailsPage';
 import TVShowDetailsPage from './pages/TVShowDetailsPage/TVShowDetailsPage';
 
 const App: React.FC = () => {
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        navigate('/shows')
+    }, [])
+
     return (
     <div className="app">
         <Sidebar />
