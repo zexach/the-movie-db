@@ -19,7 +19,7 @@ The app has the functionalities of displaying the top 10 rated TV shows and the 
 * Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Notes
-Previous instructions should be enough to run the application. If you still have problems running the app, I suggest **visiting the live demo** of the application, as it's the same version of the application, just deployed using the Netlify service.
+Previous instructions should be enough to run the application. If you still have problems running the app, I suggest **[visiting the live demo](https://test-rubi-ez.netlify.app/)** of the application, as it's the same version of the application, just deployed using the Netlify service.
 
 ## App features
 
@@ -27,7 +27,7 @@ Previous instructions should be enough to run the application. If you still have
 
 * The search field is live and react to any change in the input field.
 
-* The search fire a request on the search endpoint from TMDB.
+* The search fires a request on the search endpoint from TMDB.
 
 * The search is performed only when there are 3 or more characters in the search bar and it is triggered only one second after the user has stopped typing.
 
@@ -39,7 +39,7 @@ Previous instructions should be enough to run the application. If you still have
 
 * When the user clicks on a specific MOVIE/TV SHOW, he is taken to the details view.
 
-* The Detailed View of the Movie/TV Show shows the cover image on top and in the case of Movies/TV Shows which have a trailer shows the trailer video instead of the cover image. Below the image/trailer information regarding the selected Movie/TV Show are shown.
+* The Detailed View of the Movie/TV Show shows the cover image on top and in the case of Movies/TV Shows which have a trailer shows the trailer video instead of the cover image. Below the image/trailer, information regarding the selected Movie/TV Show are shown.
 
 * The Back Button returns the user back to where he was and with the same state before clicking to see more information about a Movie/TV Show. 
 
