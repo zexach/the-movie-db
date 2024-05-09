@@ -53,15 +53,19 @@ Previous instructions should be enough to run the application. If you still have
 
 ## Movies page
 
-![alt text](image.png)
+![image](https://github.com/zexach/the-movie-db/assets/83666062/639819e4-eff1-44c2-9f05-c6e6f8590f7a)
+
 
 ## TV Shows page
-![alt text](image-1.png)
+![image-1](https://github.com/zexach/the-movie-db/assets/83666062/dca327fc-8040-4389-a6d6-7ddf8aa605d8)
+
 
 ## Search 
-![alt text](image-2.png)
+![image-2](https://github.com/zexach/the-movie-db/assets/83666062/d8d70147-6321-4583-8be5-80481800afa5)
+
 
 ## Details page
-![alt text](image-3.png)
+![image-3](https://github.com/zexach/the-movie-db/assets/83666062/18ad2986-ece2-4fe0-b21e-7ca1ff6123d2)
+
 
 
