@@ -8,3 +8,33 @@
     z-index: 1;
     top: 30px;
 }
+
+@media screen and (max-width: 1080px) {
+    .backdrop-image{
+        width: 500px;
+        top: 60px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .backdrop-image{
+        width: 500px;
+        top: 180px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .backdrop-image{
+        top: 200px;
+        width: 450px;
+        height: 220px;
+    }   
+}
+
+@media screen and (max-width: 780px) {
+    .backdrop-image{
+        top: 280px;
+        width: 350px;
+        height: 180px;
+    }
+}
