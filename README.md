@@ -1,4 +1,4 @@
-# RUBICON x The Movie Database (TMDB)
+# The Movie Database (TMDB)
 
 
 ## App summary
@@ -12,14 +12,14 @@ The app has the functionalities of displaying the top 10 rated TV shows and the 
 * clone this repository: `git clone https://github.com/zexach/the-movie-db`
 * move to directory: `cd the-movie-db`
 * install packages: `npm install`
-* create `.env` file in root directory and add variable to file: `REACT_APP_API_KEY=6e45268e5987205205e3f45dabd51f36` (API_KEY is valid and was created for development purpose)
+* create `.env` file in root directory and add variable to file: `REACT_APP_API_KEY=your_api_key` (you can create your api key [here](https://developer.themoviedb.org/))
 * start the application: `npm start`
 
 
 * Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Notes
-Previous instructions should be enough to run the application. If you still have problems running the app, I suggest **[visiting the live demo](https://test-rubi-ez.netlify.app/)** of the application, as it's the same version of the application, just deployed using the Netlify service.
+If you still have problems running the app, I suggest **[visiting the live demo](https://test-rubi-ez.netlify.app/)** of the application, as it's the same version of the application, just deployed using the Netlify service.
 
 ## App features
 
@@ -50,22 +50,6 @@ Previous instructions should be enough to run the application. If you still have
 * **axios** is used for making HTTPS requests
 * **React Context** is used for global state management
 * **SCSS** is utilized for styling, leveraging its features like variables, mixins, and nesting for a more maintainable and organized styling approach
-
-## Movies page
-
-![image](https://github.com/zexach/the-movie-db/assets/83666062/639819e4-eff1-44c2-9f05-c6e6f8590f7a)
-
-
-## TV Shows page
-![image-1](https://github.com/zexach/the-movie-db/assets/83666062/dca327fc-8040-4389-a6d6-7ddf8aa605d8)
-
-
-## Search 
-![image-2](https://github.com/zexach/the-movie-db/assets/83666062/d8d70147-6321-4583-8be5-80481800afa5)
-
-
-## Details page
-![image-3](https://github.com/zexach/the-movie-db/assets/83666062/18ad2986-ece2-4fe0-b21e-7ca1ff6123d2)
 
 
 
