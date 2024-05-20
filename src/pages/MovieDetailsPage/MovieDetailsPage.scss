@@ -7,21 +7,6 @@
     flex-direction: column;
     align-items: center;
     background: linear-gradient(90deg, $white, $light-gray 100% 20%);
-    &__backdrop{
-        width: 100%;
-        position: relative;
-        z-index: -1;
-        &__image{
-            height: 400px;
-            position: relative;
-            z-index: -1;
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            filter: blur(2px) brightness(40%);
-            
-        }
-    }
     &__content{
         padding: 2rem;
         display: flex;

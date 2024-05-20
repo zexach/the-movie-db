@@ -13,7 +13,7 @@ const Genres: React.FC<Props> = ({ genres }) => {
         <>
         <div className="genres">
             <p className="genres__title">{ genres ? (genres?.length > 1 ? 'Genres:' : 'Genre:') : '' }</p>
-            { genres?.map((genre) => <p key={genre.id} className="genres__genre"><i>{genre.name}</i></p>) }
+            { genres?.map((genre) => <p key={genre.id} className="genres__genre">{genre.name.toLowerCase()}</p>) }
         </div>
         </>
     );

@@ -10,6 +10,8 @@ import useDebouncer from "../../hooks/useDebouncer";
 import Searchbar from "../../components/Searchbar/Searchbar";
 import ItemList from "../../components/item/ItemList/ItemList";
 import SearchResultList from "../../components/SearchResultList/SearchResultList";
+import WelcomeMessage from "../../components/details/WelcomeMessage/WelcomeMessage";
+import BackdropBackground from "../../components/details/BackdropBackground/BackdropBackground";
 
 const TVShowsPage: React.FC = () => {
 
@@ -34,8 +36,14 @@ const TVShowsPage: React.FC = () => {
     return(
         <>
         <div className="tvshows-page">
-            <Searchbar placeholder="Search for a tv show..." />
-            { !(debouncedSearch.length > 2) ? <ItemList itemList={tvShows} /> : <SearchResultList searchResult={searchResult} /> }
+            <BackdropBackground imagePath='/xJHokMbljvjADYdit5fK5VQsXEG.jpg' />
+            <div className="tvshows-page__welcome-section">
+                <WelcomeMessage message="Step into the Enchanting Realm of Cinematic Adventures!" details="Millions of movies and tv shows to discover. Explore now." />
+                <Searchbar placeholder="Search for a tv show..." />
+            </div>
+            <div className="tvshows-page__shows-section">
+                { !(debouncedSearch.length > 2) ? <ItemList itemList={tvShows} /> : <SearchResultList searchResult={searchResult} /> }
+            </div>
         </div>
         </>
     );

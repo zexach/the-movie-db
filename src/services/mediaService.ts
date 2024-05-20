@@ -19,8 +19,7 @@ export const getItems = async<T>(
     mapper: (item: T) => IMedia) => {
     try {
         const response: AxiosResponse = await axios.get(`${BASE_URL}${endpoint}`, params);
-        const results: T[] = response.data.results.slice(0,10);
-        const mediaResults: IMedia[] = results.map((result) => mapper(result));
+        const mediaResults: IMedia[] = response.data.results.map((result: T) => mapper(result));
         setItems(mediaResults);
     } catch (e) {
         console.log(e);

@@ -1,0 +1,15 @@
+@import '../../../style/variables';
+
+.welcome-message{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    color: $light-gray;
+    &__title{
+        font-size: 30px;
+    }
+    &__details{
+        font-size: 20px;
+        text-align: center;
+    }
+}

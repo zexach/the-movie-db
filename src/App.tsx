@@ -16,9 +16,9 @@ const App: React.FC = () => {
         <div className="app__pages">
             <Routes>
                 <Route path='*' element={<NotFoundPage />} />
-                <Route path='/' element={<TVShowsPage />} />
-                <Route path='/movies' element={<MoviesPage />} />
+                <Route path='/' element={<MoviesPage />} />
                 <Route path='/movie/:id' element={<MovieDetailsPage />} />
+                <Route path='/shows' element={<TVShowsPage />} />
                 <Route path='/show/:id' element={<TVShowDetailsPage />} />
             </Routes>
         </div>

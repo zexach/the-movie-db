@@ -23,6 +23,7 @@ const MovieDetailsPage: React.FC = () => {
     const [isAvailable, setIsAvailable] = useState<boolean>(true);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         if (id) {
             getSingleMedia('/movie', parseInt(id), setMovie, setIsAvailable)
             getTrailer('/movie', parseInt(id), setTrailer);
