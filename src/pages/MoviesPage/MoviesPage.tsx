@@ -36,7 +36,7 @@ const MoviesPage: React.FC = () => {
     return(
         <>
         <div className="movies-page">
-            <BackdropBackground imagePath='/dqK9Hag1054tghRQSqLSfrkvQnA.jpg' />
+            <BackdropBackground imagePath='/52oOtS4jYfSEIoXByyb3bEMVi9Z.jpg' />
             <div className="movies-page__welcome-section">
                 <WelcomeMessage message="Step into the Enchanting Realm of Cinematic Adventures!" details="Millions of movies and tv shows to discover. Explore now." />
                 <Searchbar placeholder="Search for a movie..." />
