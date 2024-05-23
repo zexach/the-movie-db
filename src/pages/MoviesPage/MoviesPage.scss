@@ -9,14 +9,32 @@
     gap: 5rem;
     background-image: url('https://i.imgur.com/hIJ2MHz.png');
     &__welcome-section{
+        padding: 2rem;
         position: absolute;
         top: 25%;
         transform: translateY(-50%);
         display: flex;
         flex-direction: column;
         gap: 3rem;
+        text-align: center;
     }
     &__movies-section{
         padding: 0rem 2rem 2rem 2rem;
+    }
+}
+
+@media screen and (max-width: 960px){
+    .movies-page{
+        &__welcome-section{
+            top: 35%;
+        }
+    }
+}
+
+@media screen and (max-width: 780px){
+    .movies-page{
+        &__welcome-section{
+            top: 40%;
+        }
     }
 }

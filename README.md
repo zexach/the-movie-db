@@ -5,7 +5,7 @@
 
 The app has the functionalities of displaying the top 10 rated TV shows and the top 10 rated movies, a search function for both, and a detailed view for individual items. The app is fully responsive for all devices.
 
-## Live demo: https://test-rubi-ez.netlify.app/
+## Live demo: [https://test-rubi-ez.netlify.app](https://ez-tmdb.netlify.app/)/
 
 ## How to start application
 
