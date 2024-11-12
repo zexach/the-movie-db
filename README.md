@@ -19,7 +19,7 @@ The app has the functionalities of displaying the top 10 rated TV shows and the 
 * Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Notes
-If you still have problems running the app, I suggest **[visiting the live demo](https://test-rubi-ez.netlify.app/)** of the application, as it's the same version of the application, just deployed using the Netlify service.
+If you still have problems running the app, I suggest **[visiting the live demo](https://ez-tmdb.netlify.app/)** of the application, as it's the same version of the application, just deployed using the Netlify service.
 
 ## App features
 
